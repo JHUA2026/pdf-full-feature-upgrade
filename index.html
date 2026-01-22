@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Canva Instruction PDF Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- CONTROLS -->
+  <div class="container">
+    <h1>📄 Canva Instruction PDF Generator</h1>
+    <p class="subtitle">Live preview • Custom fonts • Etsy-ready</p>
+
+    <label>Product Name</label>
+    <input id="productName" type="text" placeholder="Wedding Sticker Template">
+
+    <label>Purchase / Canva Link</label>
+    <input id="canvaLink" type="text" placeholder="https://www.canva.com/...">
+
+    <label>Upload Logo (PNG / JPG)</label>
+    <input id="logoFile" type="file" accept="image/*">
+
+    <h2>Text Style</h2>
+
+    <label>Font Family</label>
+    <select id="fontFamily">
+      <option value="Times">Times</option>
+      <option value="Helvetica">Helvetica</option>
+      <option value="Courier">Courier</option>
+    </select>
+
+    <label>Font Size</label>
+    <input id="fontSize" type="number" min="8" max="18" value="11">
+
+    <label>Font Colour</label>
+    <input id="fontColor" type="color" value="#333333">
+
+    <label>Paper Size</label>
+    <select id="paperSize">
+      <option value="a4">A4</option>
+      <option value="letter">US Letter</option>
+    </select>
+
+    <label>Instruction Content</label>
+    <textarea id="instructionText" placeholder="Explain how to use the template..."></textarea>
+
+    <label>
+      <input type="checkbox" id="thankYouToggle" checked>
+      Add Thank You / Support Page
+    </label>
+
+    <button id="generateBtn">Generate PDF</button>
+  </div>
+
+  <!-- LIVE PREVIEW -->
+  <div class="preview">
+    <div class="preview-page">
+      <img id="previewLogo">
+      <h2 id="previewTitle">Product Name</h2>
+      <a id="previewLink">Open your purchase link here</a>
+      <p id="previewText">Your instructions will appear here…</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
